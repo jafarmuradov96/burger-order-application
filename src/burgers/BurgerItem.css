@@ -1,0 +1,27 @@
+.burger-item {
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.burger-item-left   {
+}
+
+.description {
+    font-size: 18px;
+    font-style: italic;
+    color: #6e6c6c;
+}
+
+.price  {
+    color: orangered;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.burger-item-right {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+}

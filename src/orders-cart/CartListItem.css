@@ -1,0 +1,48 @@
+.cart-list {
+    border-bottom: 1px solid blueviolet;
+    padding-bottom: 15px;
+
+}
+
+.cart-lisst-left {
+    
+}
+
+.cart-lisst-left  h2 {
+    font-size: 22px;
+    font-style: bold;
+
+}
+
+
+.price-count {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.price {
+
+
+}
+
+
+.count {
+    font-size: 20px;
+    border: 1px solid #ccc;
+    padding: 3px 10px;
+}
+.cart-list-right  {
+display: flex;
+gap: 15px;
+}
+
+.cart-list-right button {
+    font-size: 24px;
+    color: blueviolet;
+    /* padding: 5px 10px; */
+    width: 40px;
+    border: 1px solid blueviolet;
+    cursor: pointer;
+    border-radius: 5px;
+}

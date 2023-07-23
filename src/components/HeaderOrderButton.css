@@ -1,0 +1,19 @@
+.header-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.header-btn-name {
+    margin-right: 20px;
+}
+
+.header-btn-count {
+    font-size: 22px;
+    padding: 6px 12px;
+    background-color: blueviolet;
+    color: #ffffff;
+    border-radius: 30px;
+}

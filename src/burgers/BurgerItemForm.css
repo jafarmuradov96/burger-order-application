@@ -1,0 +1,27 @@
+.burger-item-form {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.burger-item-form input {
+    margin-bottom: 25px;
+    width: 40px;
+    padding-left: 6px;
+}
+
+.burger-item-form label {
+    font-size: 16px;
+    color: black;
+    margin-right: 7px;
+}
+
+.burger-item-form button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    background-color: blueviolet;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
