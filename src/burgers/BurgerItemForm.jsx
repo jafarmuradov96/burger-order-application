@@ -3,8 +3,6 @@ import Input from '../UI/Input';
 
 const BurgerItemForm = ({ value, onChange, onSubmit}) => {
 
-
-
   return (
     <form className='burger-item-form' onSubmit = {onSubmit}>
       <Input

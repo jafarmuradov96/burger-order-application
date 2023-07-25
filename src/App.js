@@ -29,17 +29,16 @@ function App() {
   }
 
 
-  const handleAddOrderCount = (id,count,price) => {
+  const handleAddOrderCount = (id) => {
     setOrderList((prevItems) =>
       prevItems.map((item) =>
         item.id === id ? { ...item, count: +item.count + 1 } : item
       ));
-      // setTotalAmount(totalAmount + count * price);
       setCountOrder(countOrder + 1)
 
   };
 
-  const handleRemoveOrderCount = (id, targetIndex, count,price) => {
+  const handleRemoveOrderCount = (id, targetIndex, count) => {
     setOrderList((prevItems) =>
       prevItems.map((item) =>
         item.id === id ? { ...item, count: +item.count - (item.count > 0 ? 1 : 0) } : item
@@ -47,8 +46,6 @@ function App() {
     if (count <= 1) {
       setOrderList(orderList.filter((_, index) => index !== targetIndex))
     }
-    // setTotalAmount(+totalAmount - count * price);
-
     setCountOrder(countOrder - 1)
   };
 

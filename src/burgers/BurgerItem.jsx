@@ -3,7 +3,7 @@ import '../burgers/BurgerItem.css';
 import BurgerItemForm from './BurgerItemForm';
 
 
-const BurgerItem = ({ name, id, description, price, onSubmit,count  }) => {
+const BurgerItem = ({ name, id, description, price, onSubmit  }) => {
     const [countOrderBurger, setCountOrderBurger] = useState(1);
 
     const priceBurger = price.toFixed(2)
@@ -12,7 +12,7 @@ const BurgerItem = ({ name, id, description, price, onSubmit,count  }) => {
     const handleSubmitBurger = (e) => {
         e.preventDefault();
 
-        console.log(count,name, price, countOrderBurger, id);
+        // console.log(name, price, countOrderBurger, id);
         onSubmit(name, price, countOrderBurger,id)
     }
 
