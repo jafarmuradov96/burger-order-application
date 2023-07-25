@@ -25,28 +25,30 @@ function App() {
 
     setCountOrder(countOrder + (+count))
 
-    console.log('count', count);
   }
 
 
-  const handleAddOrderCount = (id) => {
+  const handleAddOrderCount = (id,count, price) => {
     setOrderList((prevItems) =>
       prevItems.map((item) =>
         item.id === id ? { ...item, count: +item.count + 1 } : item
       ));
       setCountOrder(countOrder + 1)
-
+      setTotalAmount(totalAmount +  price);
   };
 
-  const handleRemoveOrderCount = (id, targetIndex, count) => {
+  const handleRemoveOrderCount = (id, targetIndex, count,price) => {
     setOrderList((prevItems) =>
       prevItems.map((item) =>
         item.id === id ? { ...item, count: +item.count - (item.count > 0 ? 1 : 0) } : item
       ))
+    setTotalAmount(totalAmount -  price);
+
     if (count <= 1) {
       setOrderList(orderList.filter((_, index) => index !== targetIndex))
     }
     setCountOrder(countOrder - 1)
+
   };
 
 

@@ -38,7 +38,7 @@ const Header = ({ orderList, countOrder, totalAmount, onAdd, onRemove }) => {
                                     count={item.count}
                                     id={item.id}
                                     onAdd ={() =>onAdd(item.id,item.count,item.price)}
-                                    onRemove ={() =>onRemove(item.id, index, item.count)}
+                                    onRemove ={() =>onRemove(item.id, index, item.count,item.price)}
                                     />
                             ))}
                         </ul>
