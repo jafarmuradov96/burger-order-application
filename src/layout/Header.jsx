@@ -13,7 +13,6 @@ const Header = ({ orderList, countOrder, totalAmount, onAdd, onRemove }) => {
 
     const listLength = orderList.length;
 
-
     return (
         <>
             <header>
@@ -38,8 +37,8 @@ const Header = ({ orderList, countOrder, totalAmount, onAdd, onRemove }) => {
                                     price={item.price}
                                     count={item.count}
                                     id={item.id}
-                                    onAdd ={onAdd}
-                                    onRemove ={onRemove}
+                                    onAdd ={() =>onAdd(item.id,item.count,item.price)}
+                                    onRemove ={() =>onRemove(item.id, index, item.count)}
                                     />
                             ))}
                         </ul>
@@ -63,4 +62,4 @@ const Header = ({ orderList, countOrder, totalAmount, onAdd, onRemove }) => {
     )
 }
 
-export default Header
+export default Header;

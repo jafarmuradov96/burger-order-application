@@ -1,4 +1,3 @@
-import './App.css';
 import Burgers from './layout/Burgers';
 import Header from './layout/Header';
 import { useState } from 'react';
@@ -9,15 +8,12 @@ function App() {
   const [totalAmount, setTotalAmount] = useState(0);
   
 
-
-
-
-  const handleAdd = (name, price, count,id) => {
+  const handleAdd = (name, price, count, id) => {
     const found = orderList.find((item) => item.id === id)
     if (found) {
       const updatedOrderList = orderList.map(el => {
         if (el.id === id) {
-          el.count ++
+          el.count++
         }
         return el
       })
@@ -25,59 +21,51 @@ function App() {
     } else {
       setOrderList([...orderList, { name: name, price: price, count: count, id: id }]);
     }
-
     setTotalAmount(totalAmount + count * price);
-  }
 
-  const handleAddCount = () => {
-    setCountOrder(count => count + 1)
-  } 
+    setCountOrder(countOrder + (+count))
 
-
-  const handleAddOrderCount = (id) => {
-    // const updatedOrderList = orderList.map(el => {
-    //   if (el.id === id) {
-    //      return { ...el, count: +el.count + 1 }
-    //   }
-    //   console.log(el.count +1, 'b');
-    //   return { ...el, count: +el.count + 1 }
-    // })
-    // setOrderList(updatedOrderList)
+    console.log('count', count);
   }
 
 
+  const handleAddOrderCount = (id,count,price) => {
+    setOrderList((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, count: +item.count + 1 } : item
+      ));
+      // setTotalAmount(totalAmount + count * price);
+      setCountOrder(countOrder + 1)
 
-  const handleRemoveOrderCount = (id) => {
+  };
 
-    // const updatedOrderList = orderList.map(el => {
-    //   if (el.id === id) {
-    //     //  return 
-    //   }
-    //   console.log(el.count +1, 'b');
-    //   return { ...el, count: +el.count - 1 }
-    // })
-    // setOrderList(updatedOrderList)
-  }
+  const handleRemoveOrderCount = (id, targetIndex, count,price) => {
+    setOrderList((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, count: +item.count - (item.count > 0 ? 1 : 0) } : item
+      ))
+    if (count <= 1) {
+      setOrderList(orderList.filter((_, index) => index !== targetIndex))
+    }
+    // setTotalAmount(+totalAmount - count * price);
 
+    setCountOrder(countOrder - 1)
+  };
 
 
   return (
     <>
-
       <Header
         orderList={orderList}
         countOrder={countOrder}
-        totalAmount={totalAmount} 
-        onAdd = {handleAddOrderCount}
-        onRemove = {handleRemoveOrderCount}
-        />
+        totalAmount={totalAmount}
+        onAdd={handleAddOrderCount}
+        onRemove={handleRemoveOrderCount}
+      />
       <main>
         <Burgers
-          handleAddCount={handleAddCount}
           onSubmit={handleAdd} />
-
       </main>
-
     </>
   );
 }

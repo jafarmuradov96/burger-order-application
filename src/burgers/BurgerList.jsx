@@ -30,7 +30,7 @@ const DUMMY_BURGERS = [
 ]
 
 
-const BurgerList = ({ handleAddCount, onSubmit, countOrderBurger }) => {
+const BurgerList = ({onSubmit }) => {
     return (
         <div>
             <ul className='burger-list'>
@@ -41,9 +41,7 @@ const BurgerList = ({ handleAddCount, onSubmit, countOrderBurger }) => {
                         name={item.name}
                         description={item.description}
                         price={item.price}
-                        handleAddCount={handleAddCount}
                         onSubmit={onSubmit} 
-                        countOrderBurger ={countOrderBurger}
                         />
                 ))}
             </ul>

@@ -2,7 +2,8 @@ import React from 'react';
 import '../orders-cart/CartListItem.css';
 
 const CartListItem = ({name,price,count, onRemove, onAdd}) => {
-
+    
+    console.log('headercount', count);
 
     const priceBurger = price.toFixed(2)
     return (
@@ -16,8 +17,8 @@ const CartListItem = ({name,price,count, onRemove, onAdd}) => {
                     </div>
                 </div>
 
-                <div className='cart-list-right'>
-                    <button onClick = {() =>onRemove()} >-</button>
+                <div className='cart-list-right' >
+                    <button onClick = {onRemove} >-</button>
                     <button onClick={onAdd}>+</button>
                 </div>
             </li>

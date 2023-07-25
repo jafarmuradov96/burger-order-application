@@ -1,7 +1,7 @@
 import '../burgers/BurgerItemForm.css';
 import Input from '../UI/Input';
 
-const BurgerItemForm = ({ value, onChange, onSubmit, handleAddCount}) => {
+const BurgerItemForm = ({ value, onChange, onSubmit}) => {
 
 
 
@@ -13,7 +13,7 @@ const BurgerItemForm = ({ value, onChange, onSubmit, handleAddCount}) => {
         onChange = {onChange}
         value={value}
       />
-      <button onClick={handleAddCount}>+ADD</button>
+      <button>+ADD</button>
     </form>
   )
 }
